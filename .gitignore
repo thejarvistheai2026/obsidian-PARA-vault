@@ -1,0 +1,18 @@
+# OpenClaw Workspace Backup
+
+Auto-generated backup of agent configuration and memory.
+
+## Included
+
+- **Configs/** - Agent identity, SOUL, AGENTS.md, etc.
+- **Daily/** - Daily notes and logs
+- **memory/** - Session memory and heartbeat state
+- **workflows/** - Scripts and workflows (YouTube transcript, etc.)
+- **Emergency-Backup/** - Recovery information
+
+## Excluded
+
+- **.openclaw/** - Runtime session files (transcripts, temp data)
+
+---
+*Last backup: 2026-03-02*
