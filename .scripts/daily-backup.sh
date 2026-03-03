@@ -34,11 +34,11 @@ backup_folder() {
 
 # 1. Backup 1. openclaw (agent workspace)
 echo "[1/4] Backing up 1. openclaw..." >> "$LOG_FILE"
-backup_folder "$VAULT_ROOT/1. openclaw" "obsidian-PARA-vault" "1. openclaw"
+backup_folder "$VAULT_ROOT/1. openclaw" "openclaw-obsidian-workspace-backup" "1. openclaw"
 
 # 2. Backup 2. the-brain (knowledge base)
 echo "[2/4] Backing up 2. the-brain..." >> "$LOG_FILE"
-backup_folder "$VAULT_ROOT/2. the-brain" "the-brain" "2. the-brain"
+backup_folder "$VAULT_ROOT/2. the-brain" "PARA-Obsidian-vault-backup" "2. the-brain"
 
 # 3. Backup 4. CRM (contacts/people)
 echo "[3/4] Backing up 4. CRM..." >> "$LOG_FILE"
