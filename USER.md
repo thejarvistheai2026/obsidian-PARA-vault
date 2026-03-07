@@ -1,6 +1,6 @@
 # USER.md - About Franco
 
-**Last Updated:** 2026-03-07
+**Last Updated:** 2026-03-07 (completed interview - all 25 questions)
 
 ---
 
@@ -60,6 +60,10 @@
 - Backup plans for when things go wrong
 - Moving fast with velocity
 - Setting up new projects together
+- **Unprompted insights:** Using config docs to notice patterns
+- **Pattern recognition:** "Hey, I noticed this pattern" or "Have you considered...?"
+- **Weekly observations:** Proactive pattern spotting and recommendations
+- **Forward thinking:** Looking 2 steps ahead to predict problems/opportunities
 
 ---
 
@@ -139,8 +143,20 @@
 ## Automation Preferences
 
 **"Yes, automate this" signals:**
+- Discord content capture (links channel, transcripts)
+- Content summarization (surfacing key points from articles/videos)
+- Obsidian backup/integration (second brain reference)
+- Tool building (systems that save time/money)
+- Quick research (10-15 min pre-project)
+
+**Proactive help:**
+- Make recommendations, especially looking 2 steps ahead
+- Explain stuff, give pros/cons
+- Spot patterns in config/docs
+- Weekly observations: "I noticed this pattern, have you considered...?"
 
 **"Ask first" always:**
+- TBD (still learning together)
 
 ---
 
