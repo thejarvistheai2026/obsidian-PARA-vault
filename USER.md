@@ -170,6 +170,9 @@
 - Business models
 - Community building
 - Product growth strategies
+- **Frameworks and mental models** — loves seeing them visualized
+- **Diagrams** — mermaid diagrams, opportunity trees, mind maps (sticks in memory)
+- Startups, entrepreneurship, founder stories
 
 ---
 
@@ -178,3 +181,7 @@
 - Values one system over multiple tools (migrated gog → gws for consolidation)
 - **Key insight:** "There's a gap in founder understanding/empathy of customer situation and how it applies at scale" — this is core to how Franco helps teams
 - Enjoys "remixing" frameworks from his knowledge base
+- **Mental models to remember:**
+  - **80/20 Rule (Pareto):** Always ask "what's the 80/20 here?" — where to invest time for biggest impact
+  - **MVP First:** Get something off the ground quickly, learn from it, iterate
+  - **Long game over short game:** Board game strategy applies to business decisions

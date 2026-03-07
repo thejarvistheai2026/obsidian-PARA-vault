@@ -1,0 +1,21 @@
+Daily System Status - Saturday, Mar 07
+
+Discord Bot: ✅ Running (PID: 68868)
+Last Capture: ✅ Today (       3 msgs)
+
+Newsletter: ⏸️ Idle
+   (Not scheduled)
+
+Discord Retro: ⏸️ Idle
+   (Not scheduled)
+
+Daily Backup: ✅ Enabled
+
+OpenClaw Gateway: ✅ Running
+
+Next Jobs:
+- Newsletter: Sun/Thu @ 09:00
+- Discord Retro: Sun/Thu @ 22:00  
+- This Report: Daily @ 08:00
+
+Reply STOP to pause reports.
