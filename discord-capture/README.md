@@ -110,7 +110,9 @@ node bot.js
 
 ```
 discord-capture/
-├── bot.js              # Discord listener
+├── bot.js              # Discord listener (real-time)
+├── backfill-channel.js # Historical message fetcher
+├── backfill.sh         # Easy backfill script
 ├── generate-retro.sh   # AI retro generator
 ├── test-retro.sh       # Manual testing
 ├── setup.sh            # One-time setup
@@ -125,6 +127,32 @@ discord-capture/
 
 memory/discord-retro/   # Generated retros
 ```
+
+## Historical Backfill
+
+**Real-time capture** (bot.js) only gets messages from when it starts.
+
+**Backfill** fetches historical messages from all accessible channels.
+
+```bash
+# Backfill last 30 days (default)
+./backfill.sh
+
+# Backfill last 7 days
+./backfill.sh 7
+
+# Backfill last 90 days
+./backfill.sh 90
+```
+
+**How it works:**
+- Fetches message history from each channel
+- Respects Discord rate limits (1s delay per batch)
+- Saves to `raw/YYYY-MM-DD.jsonl` by original message date
+- Marks messages as `"type": "historical"`
+- Can be run multiple times (won't duplicate, uses message ID)
+
+**Note:** Backfill is manual—run it once to catch up, then bot.js handles real-time.
 
 ## Management Commands
 
