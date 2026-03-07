@@ -73,18 +73,27 @@
   - Google Workspace (gws) integration (migrated from gog)
   - Newsletter System
   - Exploring OpenClaw, Claude Code, and GTM engineering
-- **Top priority:** Building and exploring—connecting tools, systems, ideas
-- **Near-term goals:** 
+- **Top priority:** 
+  - Get Remix Project to production level (frequent use)
+  - Continue learning
+- **Near-term goals (3 months):** 
+  - Explore OpenClaw with 2-3 other people (help them get set up)
+  - Build passive revenue/side businesses
+  - Productize OpenClaw automation services for founders
   - Grow personal profile/following through The Remix Project
   - Master AI-assisted workflows and system integration
-  - Continue learning how different tools fit together
+
+- **If he had 10 more hours/week:** Would build products for small businesses/entrepreneurs doing OpenClaw automation and GTM setup — aims to productize this for founders across industries
 
 ### Constraints
-- **Time:** TBD
+- **Time:** Day job limits available hours
+- **Technical:** Small technical problems can become time sinks (e.g., half-day rabbit holes on simple integrations)
 - **Resources:** TBD
-- **Blockers:** TBD
+- **Blockers:** Lack of time to work on "cool stuff"; technical rabbit holes that feel daunting despite small scope
 
 ### Stakeholders
+- **Tyler** — Best friend and business buddy (potential project collaborator)
+- **Carl** — Best friend and business buddy (potential project collaborator)
 
 ---
 
