@@ -113,7 +113,7 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.openclaw.gateway.plis
 - iMessage (via `imsg` CLI, paired: +16138893035)
 
 **Skills Installed:**
-- gog (Google Workspace: Gmail, Calendar, Drive)
+- gws (Google Workspace: Gmail, Drive, Calendar, Sheets, Docs, Chat, Meet - replaces gog)
 - imsg (iMessage)
 - weather
 - healthcheck

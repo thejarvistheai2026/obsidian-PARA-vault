@@ -121,12 +121,14 @@
 
 ## 🔧 Skills Installed
 
-### gog (Google Workspace)
-- **Binary:** `/opt/homebrew/bin/gog` (via Homebrew: `steipete/tap/gogcli`)
+### gws (Google Workspace CLI)
+- **Binary:** `/opt/homebrew/bin/gws` (via npm: `@googleworkspace/cli`)
 - **Account:** jarvistheai2026@gmail.com
-- **Services:** Gmail, Calendar, Drive, Contacts, Docs, Sheets
-- **Auth:** OAuth (last refreshed: 2026-02-14)
+- **Project:** upheld-hope-486013-p3
+- **Services:** Gmail, Drive, Calendar, Contacts, Docs, Sheets, Chat, Meet, Forms, Keep
+- **Auth:** OAuth with encrypted credentials in `~/.config/gws/credentials.enc`
 - **Status:** ✅ Working
+- **Note:** Replaces gog (deprecated)
 
 ### imsg (iMessage)
 - **Binary:** `/opt/homebrew/bin/imsg`

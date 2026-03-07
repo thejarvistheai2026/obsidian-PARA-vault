@@ -235,9 +235,11 @@ imsg chats --limit 5
 ```
 Lists recent iMessage conversations
 
-### Check Gmail
+### Check Gmail (via gws)
 ```bash
-gog gmail search 'newer_than:1d' --max 5 --account jarvistheai2026@gmail.com
+gws gmail +triage --max 5
+# Or list emails
+gws gmail users.messages list --params '{"userId": "me", "maxResults": 5}'
 ```
 Shows recent emails
 
@@ -360,14 +362,14 @@ chmod 600 ~/.openclaw/openclaw.json
 
 ### Key Binaries
 - `openclaw` → `/opt/homebrew/bin/openclaw`
-- `gog` (Gmail/Drive) → `/opt/homebrew/bin/gog`
+- `gws` (Google Workspace CLI) → `/opt/homebrew/bin/gws` (replaces gog)
 - `imsg` (iMessage) → `/opt/homebrew/bin/imsg`
 - `node` → `/opt/homebrew/bin/node`
 
 ### Check Binary Locations
 ```bash
 which openclaw
-which gog
+which gws
 which imsg
 ```
 
