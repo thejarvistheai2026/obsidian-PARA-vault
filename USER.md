@@ -100,13 +100,21 @@
 ## Patterns & Preferences
 
 ### Decision-Making
-- **Style:** TBD
+- **Style:** Balances "move fast and iterate" with safety nets and long-term thinking
+  - Naturally gravitates toward speed but always with contingency plans
+  - Plays the long game over short-term wins (board game strategy applies to business)
+  - Considers secondary outcomes and downstream effects
+  - **Tension/duality:** Often finds middle ground between two extremes
 - **Risk tolerance:** TBD
-- **When they're stuck:** TBD
+- **When they're stuck:** 
+  - Lays out options and does research
+  - Uses multiple AI tools to see different angles
+  - Takes breaks, goes for walks, sleeps on it
+  - Returns with fresh/creative perspective
 
 ### Work Style
-- **Best time:** TBD
-- **Energy patterns:** TBD
+- **Best time:** **Morning** — sharpest energy and focus
+- **Energy patterns:** Peaks in morning, fades throughout day, occasional second wind
 - **Work style:** 
   - Curiosity-driven
   - Exploration-focused
@@ -116,6 +124,15 @@
   - **Velocity over perfection:** Prioritizes speed and getting things done
   - **MVP first, iterate later**
   - Non-technical but technical-adjacent (uses AI to code)
+  - Comfortable working solo or collaboratively (depends on project)
+  - **Prefers collaborative partnership** (wants great duo/team dynamic with AI)
+
+### Task Tracking
+- **Current:** Apple Notes (simple, writes things out)
+- **Wants:** Collaborative task tracking with AI
+  - Key projects outlined with tasks
+  - Morning reminders, afternoon check-ins, end-of-day recaps
+  - Needs help staying on track
 
 ---
 
