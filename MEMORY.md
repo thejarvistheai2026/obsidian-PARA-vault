@@ -44,6 +44,58 @@ Mac-Mini-Obsidian-Vault/
 3. **Scripts use hardcoded paths** — numbered folders don't change
 4. **Sanitized OpenClaw config** — tokens redacted in backups
 
+## Google Workspace CLI (gws) - 2026-03-07
+
+**Tool:** `gws` (Google's official CLI, replaces `gog`)
+
+**Features:**
+- Direct API access to all Google Workspace services
+- 38 OpenClaw skills (symlinked in `skills/`)
+- Live Discovery API (always current)
+- Structured JSON output
+- Model Armor for safety
+
+**Authentication:**
+- Account: jarvistheai2026@gmail.com
+- Project: upheld-hope-486013-p3
+- Token: stored in `~/.config/gws/credentials.enc`
+
+**Available Skills:**
+- **Email:** gws-gmail, gws-gmail-send, gws-gmail-triage, gws-gmail-watch
+- **Files:** gws-drive, gws-drive-upload
+- **Calendar:** gws-calendar, gws-calendar-agenda, gws-calendar-insert
+- **Docs:** gws-docs, gws-docs-write
+- **Sheets:** gws-sheets, gws-sheets-read, gws-sheets-append
+- **Chat:** gws-chat, gws-chat-send
+- **Meet:** gws-meet
+- **Safety:** gws-modelarmor, gws-modelarmor-sanitize-prompt
+- **Workflows:** gws-workflow-* (standup, weekly-digest, meeting-prep, etc.)
+
+**Usage Examples:**
+```bash
+# Gmail triage
+gws gmail +triage --max 5
+
+# Send email
+gws gmail +send --to "user@example.com" --subject "Hi" --body "Hello"
+
+# Calendar agenda
+gws calendar +agenda
+
+# List Drive files
+gws drive files list --params '{"pageSize": 10}'
+```
+
+**Setup Commands (for reference):**
+```bash
+npm install -g @googleworkspace/cli
+gws auth setup
+gws auth login
+gws --help
+```
+
+---
+
 ## Backup System Updates (2026-03-04)
 
 ### Fixes Applied
