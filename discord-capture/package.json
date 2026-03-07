@@ -1,0 +1,17 @@
+{
+  "name": "openclaw-discord-capture",
+  "version": "1.0.0",
+  "description": "Discord message capture and retrospective system",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --inspect bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

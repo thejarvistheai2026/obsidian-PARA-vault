@@ -1,0 +1,15 @@
+# Discord Bot Token - DO NOT COMMIT
+.env
+
+# Logs
+*.log
+*.error
+
+# Generated retros (optional - keep these)
+# memory/discord-retro/
+
+# Raw capture files (optional - can archive)
+# raw/*.jsonl
+
+# Node modules
+node_modules/

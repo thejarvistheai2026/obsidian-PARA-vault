@@ -1,0 +1,19 @@
+{
+  "botUserId": "1479867210179543210",
+  "monitoredChannels": [],
+  "capture": {
+    "botMessages": true,
+    "mentions": true,
+    "replies": true,
+    "allMessages": true
+  },
+  "storage": {
+    "rawDir": "./raw",
+    "markerFile": "./marker.json"
+  },
+  "retro": {
+    "outputDir": "../memory/discord-retro",
+    "ollamaModel": "kimi-k2.5:cloud",
+    "ollamaUrl": "http://localhost:11434"
+  }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ai.thejarvis.openclaw.discord-retro</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture/run-retro.sh</string>
+    </array>
+    
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key>
+            <integer>0</integer>
+            <key>Hour</key>
+            <integer>22</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key>
+            <integer>4</integer>
+            <key>Hour</key>
+            <integer>22</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture/retro.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture/retro.error</string>
+    
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
