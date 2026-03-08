@@ -198,6 +198,15 @@ echo "✓ Retro saved to: $OUTPUT_FILE"
 jq -n "{lastRun: \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > "$MARKER_FILE"
 echo "✓ Updated marker: $(cat $MARKER_FILE)"
 
+# Extract key insights for QMD indexing
+EXTRACT_SCRIPT="${SCRIPT_DIR}/extract-insights.sh"
+if [[ -f "$EXTRACT_SCRIPT" ]]; then
+    echo "Extracting key insights..."
+    bash "$EXTRACT_SCRIPT" || echo "Note: Insight extraction encountered an issue"
+else
+    echo "Note: extract-insights.sh not found, skipping insight extraction"
+fi
+
 # Optional: Archive processed raw files (uncomment to enable)
 # ARCHIVE_DIR="${RAW_DIR}/archive"
 # mkdir -p "$ARCHIVE_DIR"

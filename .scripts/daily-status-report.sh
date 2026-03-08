@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Daily Status Report - Sends system health summary via iMessage
-# Run via LaunchAgent daily @ 08:00
+# Run via LaunchAgent daily @ 07:00
 #
 
 set -e
@@ -95,11 +95,44 @@ else
     GATEWAY_STATUS="⚠️ Check manually"
 fi
 
+# Check QMD Status
+QMD_TOTAL="N/A"
+QMD_VECTORS="N/A"
+QMD_UPDATED="N/A"
+if command -v qmd >/dev/null 2>&1; then
+    QMD_INFO=$(qmd status 2>/dev/null | grep -E "(Total:|Vectors:|Updated:)" | head -3 || echo "")
+    if [[ -n "$QMD_INFO" ]]; then
+        QMD_TOTAL=$(echo "$QMD_INFO" | grep "Total:" | awk '{print $2}')
+        QMD_VECTORS=$(echo "$QMD_INFO" | grep "Vectors:" | awk '{print $2}')
+        QMD_UPDATED=$(echo "$QMD_INFO" | grep "Updated:" | sed 's/Updated://' | xargs)
+    fi
+fi
+
+# Run QMD daily update (7 AM EST)
+QMD_MAINT_LOG="/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/memory/qmd-logs/$(date +%Y-%m-%d).log"
+if [[ -f "$QMD_MAINT_LOG" ]]; then
+    # Check if log is from today and contains completion
+    if grep -q "QMD Maintenance Completed" "$QMD_MAINT_LOG" 2>/dev/null; then
+        QMD_MAINT_STATUS="✅ Updated today"
+    else
+        QMD_MAINT_STATUS="⚠️ Incomplete"
+    fi
+else
+    # Run it now since it hasn't run yet
+    /Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts/qmd-maint.sh > /dev/null 2>&1 || true
+    QMD_MAINT_STATUS="✅ Just updated"
+fi
+
 # Build the message (use plain ASCII to avoid encoding issues)
 REPORT="Daily System Status - $DAY_NAME, $(date '+%b %d')
 
 Discord Bot: $BOT_STATUS
 Last Capture: $LAST_CAPTURE
+
+QMD Search:
+   $QMD_MAINT_STATUS
+   Files: $QMD_TOTAL | Vectors: $QMD_VECTORS
+   (Updated: $QMD_UPDATED)
 
 Newsletter: $NEWSLETTER_STATUS
    ($NEWSLETTER_TODAY)
@@ -112,9 +145,10 @@ Daily Backup: $BACKUP_STATUS
 OpenClaw Gateway: $GATEWAY_STATUS
 
 Next Jobs:
+- QMD Maintenance: Daily @ 07:00
+- This Report: Daily @ 07:00
 - Newsletter: Sun/Thu @ 09:00
-- Discord Retro: Sun/Thu @ 22:00  
-- This Report: Daily @ 08:00
+- Discord Retro: Sun/Thu @ 22:00
 
 Reply STOP to pause reports."
 

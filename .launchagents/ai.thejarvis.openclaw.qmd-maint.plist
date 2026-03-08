@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  QMD Daily Maintenance LaunchAgent
+  Run at 06:55 EST (5 min before status report)
+  
+  Functions:
+  - Daily: Updates QMD index (incremental)
+  - Sunday: Full re-embedding of vectors
+  
+  Load: launchctl load ~/Library/LaunchAgents/ai.thejarvis.openclaw.qmd-maint.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ai.thejarvis.openclaw.qmd-maint</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts/qmd-maint.sh</string>
+    </array>
+    
+    <!-- Run daily at 06:55 EST (before status report) -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>55</integer>
+    </dict>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/memory/qmd-logs/daily.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/memory/qmd-logs/daily.error</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/jarvis/.bun/bin:/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <key>HOME</key>
+        <string>/Users/jarvis</string>
+    </dict>
+    
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

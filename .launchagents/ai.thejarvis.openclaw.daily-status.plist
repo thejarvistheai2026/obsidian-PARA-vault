@@ -10,11 +10,11 @@
         <string>/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts/daily-status-report.sh</string>
     </array>
     
-    <!-- Run daily at 08:00 (8 AM) -->
+    <!-- Run daily at 07:00 (7 AM EST) -->
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
-        <integer>8</integer>
+        <integer>7</integer>
         <key>Minute</key>
         <integer>0</integer>
     </dict>

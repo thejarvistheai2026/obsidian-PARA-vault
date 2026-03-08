@@ -1,0 +1,27 @@
+Daily System Status - Sunday, Mar 08
+
+Discord Bot: ✅ Running (PID: 68868)
+Last Capture: ⚠️ 2026-03-07
+
+QMD Search:
+   ✅ Just updated
+   Files: 388 | Vectors: 2342
+   (Updated: 1d ago)
+
+Newsletter: ⏳ Pending
+   (Scheduled today @ 09:00)
+
+Discord Retro: ⏳ Pending
+   (Scheduled today @ 22:00)
+
+Daily Backup: ✅ Enabled
+
+OpenClaw Gateway: ✅ Running
+
+Next Jobs:
+- QMD Maintenance: Daily @ 07:00
+- This Report: Daily @ 07:00
+- Newsletter: Sun/Thu @ 09:00
+- Discord Retro: Sun/Thu @ 22:00
+
+Reply STOP to pause reports.

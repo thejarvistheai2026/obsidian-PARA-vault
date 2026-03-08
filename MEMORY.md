@@ -44,6 +44,69 @@ Mac-Mini-Obsidian-Vault/
 3. **Scripts use hardcoded paths** — numbered folders don't change
 4. **Sanitized OpenClaw config** — tokens redacted in backups
 
+## QMD - Local Search Engine (2026-03-08)
+
+**Tool:** `qmd` — Query Markup Documents (by @tobi)
+
+**Purpose:** On-device semantic + keyword search across knowledge base
+
+**Collections:**
+- `brain` — `2. the-brain/` (263 files) — Articles, Books, Newsletters, Projects
+- `crm` — `4. CRM/` (125 files) — People profiles
+- `discord-insights` — `3. code/discord-insights/` — AI-extracted Discord learnings
+
+**Total:** 388 files indexed, 2,342 vectors embedded
+
+**Commands:**
+```bash
+qmd search "keyword" -c brain      # BM25 keyword search
+qmd vsearch "concept" -c brain     # Semantic vector search
+qmd query "question" -c crm          # Hybrid + LLM re-ranking
+```
+
+**Automation:**
+- Daily @ 06:55: Incremental update
+- Sunday @ 06:55: Full re-embedding
+- LaunchAgent: `ai.thejarvis.openclaw.qmd-maint`
+
+**Models (cached in `~/.cache/qmd/models/`):**
+- embeddinggemma-300M-Q8_0 (~300MB)
+- qwen3-reranker-0.6b-q8_0 (~640MB)
+- qmd-query-expansion-1.7B-q4_k_m (~1.1GB)
+
+## Discord Complete Awareness System (2026-03-08)
+
+Three integrated systems:
+
+### 1. Observer Bot (Real-time + AI Retros)
+- **Bot:** the-observer#9526, PID 68868
+- **Capture:** 24/7 → `discord-capture/raw/YYYY-MM-DD.jsonl`
+- **Retros:** Sun/Thu @ 22:00 → `memory/discord-retro/`
+- **Insight Extraction:** Auto-extracts to `3. code/discord-insights/` → QMD
+
+### 2. Discrawl (Archive + Search)
+- **Location:** `3. code/discrawl/`
+- **Database:** `~/.discrawl/discrawl.db` (2,539+ messages)
+- **Commands:** `discrawl search`, `discrawl tail`, `discrawl status`
+- **Tail Mode:** Live updates, PID 74447, LaunchAgent: `ai.thejarvis.openclaw.discrawl-tail`
+
+### 3. QMD Integration
+- Discord insights auto-extracted after each retro
+- Saved to: `discord-insights/YYYY/MM/YYYY-MM-DD-insights.md`
+- Auto-indexed daily at 06:55
+
+## Updated Schedule (2026-03-08)
+
+| Time | Task |
+|------|------|
+| **06:55** | QMD maintenance (daily) |
+| **07:00** | Daily status report (CHANGED from 08:00) |
+| **22:00 Sun/Thu** | Discord retro + insight extraction |
+| **23:00** | Git backup all repos |
+| **24/7** | Observer bot capture + Discrawl tail |
+
+**See:** `memory/2026-03-08.md` for full configuration details
+
 ## Google Workspace CLI (gws) - 2026-03-07
 
 **Tool:** `gws` (Google's official CLI, replaces `gog`)
