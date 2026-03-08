@@ -34,6 +34,31 @@
 - **Service Name:** `ai.openclaw.gateway`
 - **Auto-start:** Yes (on login)
 
+### ⚠️ CRITICAL: Gateway Restart Pattern
+**For config changes, ALWAYS use:**
+```bash
+openclaw gateway restart   # ✅ Keeps LaunchAgent registered
+```
+
+**DANGER - Never use during normal operation:**
+```bash
+openclaw gateway stop      # ❌ UNLOADS the LaunchAgent from macOS!
+openclaw gateway start     # ❌ Starts in foreground, NOT as a service
+```
+
+**Why this matters:**
+- `stop` unregisters the service from macOS LaunchAgents
+- `start` runs manually in the foreground (no auto-restart on crash)
+- Result: Gateway won't auto-start on boot, won't auto-restart if it crashes
+
+**If you accidentally used stop/start:**
+```bash
+openclaw gateway install   # Re-installs the LaunchAgent
+openclaw gateway restart
+```
+
+**Documented:** 2026-03-08 (learned the hard way during Discord debugging)
+
 ---
 
 ## 📂 Key File Paths

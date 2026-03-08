@@ -10,13 +10,17 @@
 # Check status
 openclaw status
 
-# Restart gateway
+# ✅ CORRECT WAY: Restart gateway (keeps LaunchAgent registered)
 openclaw gateway restart
 
-# If restart fails, try this
-openclaw gateway stop
-sleep 3
-openclaw gateway start
+# ❌ WRONG WAY - Don't use these during normal operation:
+# openclaw gateway stop    # This UNLOADS the LaunchAgent!
+# openclaw gateway start   # This runs manually, not as a service
+# Only use stop/start for debugging, then run `openclaw gateway install` to fix
+
+# If you accidentally used stop/start, fix with:
+openclaw gateway install   # Re-install LaunchAgent
+openclaw gateway restart
 
 # Access web UI
 open http://127.0.0.1:18789/
@@ -105,6 +109,9 @@ grep -i "error\|fail\|crash" /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | tail
 ## 🔄 Nuclear Option (Full Restart)
 
 ```bash
+# ⚠️ DANGER: This will UNLOAD the LaunchAgent!
+# Only use this for debugging, then re-install the service
+
 # Stop everything
 openclaw gateway stop
 sleep 5
@@ -115,8 +122,13 @@ ps aux | grep openclaw
 # Start fresh
 openclaw gateway start
 
+# 🔧 CRITICAL: Re-install the service so it auto-starts on boot
+openclaw gateway install
+
 # Verify
 openclaw status
+
+# After this, use `openclaw gateway restart` for future restarts
 ```
 
 ---

@@ -224,6 +224,50 @@ cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts"
 
 ---
 
+## 🚨 Critical: Gateway Service Got Uninstalled
+
+### ⚠️ What Happened (Documented 2026-03-08)
+When debugging Discord config, I ran these commands to restart the gateway:
+```bash
+openclaw gateway stop    # ❌ This UNLOADS the LaunchAgent!
+openclaw gateway start   # ❌ This starts manually, NOT as a service
+```
+
+**Result:** The service was unregistered from macOS. Every time the system restarted or the service crashed, it wouldn't auto-recover. Gateway showed as "not loaded" in status.
+
+### ✅ The Fix
+```bash
+# Re-install the LaunchAgent (one-time fix)
+openclaw gateway install
+
+# Verify service status
+launchctl list | grep openclaw
+
+# Restart properly
+openclaw gateway restart
+```
+
+### 📝 Lesson Learned
+**For config changes, ONLY use:**
+```bash
+openclaw gateway restart   # ✅ Keeps LaunchAgent registered
+```
+
+**NEVER use:**
+```bash
+openclaw gateway stop     # ❌ Unloads the service!
+openclaw gateway start    # ❌ Runs manually, not as service
+
+# These break auto-start on boot and auto-restart on crash
+```
+
+**Correct pattern:**
+1. Edit config
+2. `openclaw gateway restart`
+3. Done
+
+---
+
 ## 🆘 When Sharing With ChatGPT/Claude
 
 **Copy this block:**
