@@ -1,6 +1,6 @@
 # 🚨 Emergency Backup Information
 
-**If you can't reach Javis via webchat or iMessage, start here.**
+**If you can't reach Jarvis via webchat or iMessage, start here.**
 
 ---
 
@@ -9,10 +9,11 @@
 - **[[1. openclaw/Emergency-Backup/TROUBLESHOOTING]]** - Step-by-step recovery commands
 - **[[1. openclaw/Emergency-Backup/SETUP]]** - Complete system configuration
 - **[[QUICK-COMMANDS]]** - Copy-paste command cheatsheet
+- **[[The Jarvis Playbook]]** - Full setup documentation (Google Doc)
 
 ---
 
-## 📱 Can You Reach Javis?
+## 📱 Can You Reach Jarvis?
 
 ### Try These (In Order)
 
@@ -27,7 +28,7 @@ Jump to [[1. openclaw/Emergency-Backup/TROUBLESHOOTING]] and start with "Emergen
 
 ## 🆘 Getting Help From Other AIs
 
-**If Javis is down and you need help from ChatGPT/Claude:**
+**If Jarvis is down and you need help from ChatGPT/Claude:**
 
 ### Share This Context Block
 ```
@@ -69,6 +70,32 @@ openclaw gateway restart
 open http://127.0.0.1:18789/
 ```
 
+### Discord Bot Not Capturing
+```bash
+# Check if bot is running
+ps aux | grep discord
+
+# Restart bot (if needed)
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture"
+node bot.js &
+
+# Check Discrawl (backup capture)
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl"
+./bin/discrawl status
+```
+
+### QMD Search Not Working
+```bash
+# Check QMD index
+qmd status
+
+# Update index
+qmd update
+
+# If corrupted, rebuild
+qmd embed -f
+```
+
 ### Newsletter Automation Not Running
 ```bash
 # Check LaunchAgent is loaded
@@ -97,8 +124,8 @@ Check that:
 - All files are markdown (human-readable)
 - Share with other AIs when you need help
 
-**When Javis updates configs:**
-- This folder auto-updates
+**When Jarvis updates configs:**
+- This folder auto-updates (daily backup @ 23:00)
 - Google Drive stays in sync
 - Always have latest info
 
@@ -108,14 +135,24 @@ Check that:
 
 **Device:** Mac mini M4 (macOS 26.3)  
 **OpenClaw Port:** 18789 (local only)  
-**Your Number:** +16138893035 (paired to Javis via iMessage)  
-**Model:** Claude Kimi K2.5  
+**Your Number:** +16138893035 (paired to Jarvis via iMessage)  
+**Model:** Claude Sonnet 4.5 / Kimi K2.5 (Ollama)  
 **Workspace:** `~/Mac-Mini-Obsidian-Vault/1. openclaw/`  
 **Vault Root:** `~/Mac-Mini-Obsidian-Vault/`
 
 **Channels:**
 - ✅ iMessage (working, most reliable backup)
 - ✅ Webchat (primary interface, via http://127.0.0.1:18789/)
+
+**Active Systems:**
+- ✅ Discord Observer Bot (PID 68868, 24/7 capture)
+- ✅ Discrawl Archive (PID 74447, 2,539+ messages)
+- ✅ QMD Search (388 files, 2,342 vectors)
+- ✅ Daily Status Reports (07:00 iMessage)
+- ✅ Daily Git Backup (23:00)
+- ✅ Discord Retro (Sun/Thu @ 22:00)
+
+**See:** [[1. openclaw/Emergency-Backup/SETUP]] for complete system configuration
 
 ---
 
@@ -128,10 +165,10 @@ Check that:
 
 ---
 
-**Updated:** 2026-02-15  
-**By:** Javis
+**Updated:** 2026-03-08  
+**By:** Jarvis
 
 ---
 
 ## Notes
-This folder mirrors critical recovery info to Google Drive. Keep it synced!
+This folder mirrors critical recovery info. The Jarvis Playbook (Google Doc) has full setup documentation including Phase-by-phase build guide, 25 interview questions, System architecture diagrams, and Complete schedule of automations.

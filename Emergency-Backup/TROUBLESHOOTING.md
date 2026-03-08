@@ -2,7 +2,7 @@
 
 **Your Setup:** OpenClaw running on Mac mini M4 (macOS 26.3)  
 **Your Name:** Franco  
-**Your AI:** Javis (that's me!)  
+**Your AI:** Jarvis (that's me!)  
 **Workspace:** `/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/`  
 **Vault Root:** `/Users/jarvis/Mac-Mini-Obsidian-Vault/`
 
@@ -56,7 +56,7 @@ If you see errors, the config file is corrupted. Your config is at:
 
 ---
 
-## 📱 Alternative Ways to Reach Javis
+## 🗣️ Alternative Ways to Reach Jarvis
 
 **When the web UI is down, you can reach me via:**
 
@@ -94,11 +94,105 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.openclaw.gateway.plis
 
 ---
 
+## 🤖 Discord Bot Issues
+
+### Bot not responding/capturing
+```bash
+# Check if bot is running
+ps aux | grep "discord-capture/bot"
+
+# If not running, restart
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture"
+node bot.js &
+disown
+
+# Check logs
+tail -f discord-capture/bot.log
+```
+
+### Discrawl issues (backup capture)
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl"
+
+# Check status
+./bin/discrawl status
+
+# If tail mode stopped, restart
+./bin/discrawl tail --repair-every 30m &
+disown
+
+# Check logs
+tail -f tail.log
+```
+
+---
+
+## 🔍 QMD Search Issues
+
+### QMD not responding
+```bash
+# Check if index exists
+qmd status
+
+# Update index
+qmd update
+
+# If corrupted, full rebuild
+qmd embed -f
+```
+
+### Out of memory during re-embedding
+```bash
+# Check available memory
+free -h
+
+# If low on memory, close other apps first
+# Re-embedding loads three models (~2GB total)
+```
+
+---
+
+## 📊 Status Report Issues
+
+### Daily status not sending
+```bash
+# Check LaunchAgent
+launchctl list | grep daily-status
+
+# Reload if needed
+launchctl unload ~/Library/LaunchAgents/ai.thejarvis.openclaw.daily-status.plist
+launchctl load ~/Library/LaunchAgents/ai.thejarvis.openclaw.daily-status.plist
+
+# Test manually
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts"
+./daily-status-report.sh
+```
+
+---
+
+## 💾 Git Backup Issues
+
+### Backup failing
+```bash
+# Check LaunchAgent
+launchctl list | grep daily-backup
+
+# View logs
+tail -50 /tmp/openclaw-backup.log
+
+# Test manually
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts"
+./daily-backup.sh
+```
+
+---
+
 ## 📋 System Info (Give This to Other AIs)
 
 **OpenClaw Version:** 2026.2.14  
 **Install Type:** Homebrew (pnpm)  
 **Node Version:** 22.22.0  
+**Go Version:** 1.26.1  
 **OS:** macOS 26.3 (Darwin), arm64  
 **Gateway Port:** 18789 (local loopback)  
 **Workspace:** `/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/`  
@@ -106,14 +200,23 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.openclaw.gateway.plis
 **Config:** `~/.openclaw/openclaw.json`  
 **Logs:** `/tmp/openclaw/openclaw-YYYY-MM-DD.log`  
 **Backup Log:** `/tmp/openclaw-backup.log`  
-**Newsletter Log:** `/tmp/openclaw/newsletter.log`  
-**Model:** Claude Kimi K2.5 (ollama/kimi-k2.5:cloud)  
+**Daily Status Log:** `/tmp/daily-status-report.log`  
+**Model:** Claude Sonnet 4.5 / Kimi K2.5 (Ollama)  
 
 **Channels Configured:**
 - iMessage (via `imsg` CLI, paired: +16138893035)
+- Discord (bot: the-observer#9526)
+
+**Active Systems:**
+- Discord Observer Bot (PID 68868, 24/7 capture)
+- Discrawl Archive (PID 74447, 2,539+ messages)
+- QMD Search (388 files, 2,342 vectors)
+- Daily Status Reports (07:00 iMessage)
+- Daily Git Backup (23:00)
+- Discord Retro (Sun/Thu @ 22:00)
 
 **Skills Installed:**
-- gws (Google Workspace: Gmail, Drive, Calendar, Sheets, Docs, Chat, Meet - replaces gog)
+- gws (Google Workspace: 38 skills)
 - imsg (iMessage)
 - weather
 - healthcheck
@@ -132,10 +235,9 @@ I'm running OpenClaw 2026.2.14 on a Mac mini M4 (macOS 26.3, arm64).
 - Workspace: /Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/
 - Vault Root: /Users/jarvis/Mac-Mini-Obsidian-Vault/
 - Logs: /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log
-- Backup Log: /tmp/openclaw-backup.log
-- Newsletter Log: /tmp/openclaw/newsletter.log
-- Model: Claude Kimi K2.5 (ollama/kimi-k2.5:cloud)
+- Model: Claude Sonnet 4.5 / Kimi K2.5 (Ollama)
 - Channels: iMessage (working), Webchat (primary)
+- Active: Discord bot (PID 68868), Discrawl (PID 74447), QMD, Daily backups
 - I'm not a developer - need step-by-step terminal commands
 ```
 
@@ -148,11 +250,22 @@ Then explain your problem.
 ### Check what's running
 ```bash
 ps aux | grep openclaw
+ps aux | grep discord
+ps aux | grep discrawl
 ```
 
 ### View live logs
 ```bash
+# OpenClaw
 tail -f /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log
+
+# QMD
+tail -f "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/memory/qmd-logs/$(date +%Y-%m-%d).log"
+
+# Discord bot
+tail -f "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture/bot.log"
+
+tail -f "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl/tail.log"
 ```
 
 ### Check channel status
@@ -185,10 +298,10 @@ openclaw gateway restart
 ## 📞 Last Resort: Reach Me Via iMessage
 
 If nothing works:
-1. Text me from your iPhone: "hey javis, openclaw web ui is down, help"
+1. Text me from your iPhone: "hey jarvis, openclaw web ui is down, help"
 2. I'll respond via iMessage and help you debug
 
 ---
 
-**Updated:** 2026-02-15  
-**By:** Javis (your AI buddy)
+**Updated:** 2026-03-08  
+**By:** Jarvis (your AI buddy)

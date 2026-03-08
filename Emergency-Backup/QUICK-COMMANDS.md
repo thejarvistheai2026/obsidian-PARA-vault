@@ -153,6 +153,126 @@ launchctl list | grep openclaw
 - Web UI: `http://127.0.0.1:18789/`
 - Backup Log: `/tmp/openclaw-backup.log`
 - Newsletter Log: `/tmp/openclaw/newsletter.log`
+- Daily Status Log: `/tmp/daily-status-report.log`
+
+---
+
+## 🤖 Discord Bot System
+
+### Check Discord Bot Status
+```bash
+ps aux | grep "discord-capture/bot"
+```
+
+### Restart Discord Bot
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture"
+node bot.js &
+disown
+```
+
+### Check Discord Logs
+```bash
+tail -50 "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture/bot.log"
+```
+
+### Run Discord Retro Manually
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/discord-capture"
+./generate-retro.sh
+```
+
+---
+
+## 📚 Discrawl Archive
+
+### Check Discrawl Status
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl"
+./bin/discrawl status
+```
+
+### Search Discord Archive
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl"
+./bin/discrawl search "your keyword"
+```
+
+### Restart Discrawl Tail
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl"
+./bin/discrawl tail --repair-every 30m &
+disown
+```
+
+### Check Discrawl Logs
+```bash
+tail -50 "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/discrawl/tail.log"
+```
+
+---
+
+## 🔍 QMD Search
+
+### Check QMD Status
+```bash
+qmd status
+```
+
+### Update QMD Index
+```bash
+qmd update
+```
+
+### Search QMD
+```bash
+# Keyword search
+qmd search "keyword" -c brain
+
+# Semantic search
+qmd vsearch "concept" -c brain
+
+# Query with LLM re-ranking
+qmd query "your question" -c crm
+```
+
+### Full Re-embedding (Sunday maintenance)
+```bash
+qmd embed -f
+```
+
+### Check QMD Logs
+```bash
+tail -50 "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/memory/qmd-logs/$(date +%Y-%m-%d).log"
+```
+
+---
+
+## 📊 Daily Status Report
+
+### Check LaunchAgent Status
+```bash
+launchctl list | grep daily-status
+```
+
+### Reload Daily Status Agent
+```bash
+launchctl unload ~/Library/LaunchAgents/ai.thejarvis.openclaw.daily-status.plist
+launchctl load ~/Library/LaunchAgents/ai.thejarvis.openclaw.daily-status.plist
+```
+
+### Run Status Report Manually
+```bash
+cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts"
+./daily-status-report.sh
+```
+
+### Check Status Report Logs
+```bash
+tail -50 /tmp/daily-status-report.log
+```
+
+---
 
 ## 📧 Newsletter System
 
@@ -187,4 +307,4 @@ cd "/Users/jarvis/Mac-Mini-Obsidian-Vault/3. code/newsletter-system"
 
 ---
 
-**Updated:** 2026-03-04
+**Updated:** 2026-03-08
