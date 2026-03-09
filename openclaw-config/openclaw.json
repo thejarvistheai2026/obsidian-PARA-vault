@@ -1,12 +1,12 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.2.14",
-    "lastTouchedAt": "2026-02-27T21:01:40.440Z"
+    "lastTouchedVersion": "2026.3.7",
+    "lastTouchedAt": "2026-03-08T23:09:33.696Z"
   },
   "wizard": {
-    "lastRunAt": "2026-02-27T21:01:40.421Z",
-    "lastRunVersion": "2026.2.14",
-    "lastRunCommand": "configure",
+    "lastRunAt": "2026-03-08T23:01:31.412Z",
+    "lastRunVersion": "2026.3.7",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "auth": {
@@ -24,38 +24,6 @@
         "apiKey": "[REDACTED]",
         "api": "openai-completions",
         "models": [
-          {
-            "id": "kimi",
-            "name": "kimi",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 131072,
-            "maxTokens": 16384
-          },
-          {
-            "id": "minimax-m2.5:cloud",
-            "name": "minimax-m2.5:cloud",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 131072,
-            "maxTokens": 16384
-          },
           {
             "id": "kimi-k2.5:cloud",
             "name": "kimi-k2.5:cloud",
@@ -79,23 +47,18 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "ollama/kimi-k2.5:cloud",
-        "fallbacks": [
-          "anthropic/claude-sonnet-4-5"
-        ]
-      },
-      "models": {
-        "anthropic/claude-sonnet-4-5": {
-          "alias": "sonnet"
-        }
+        "primary": "ollama/kimi-k2.5:cloud"
       },
       "workspace": "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
       "compaction": {
         "mode": "safeguard"
       },
-      "maxConcurrent": 4,
-      "subagents": {
-        "maxConcurrent": 8
+      "heartbeat": {
+        "every": "30m"
       }
     }
   },
@@ -109,28 +72,26 @@
       }
     }
   },
-  "messages": {
-    "ackReactionScope": "group-mentions"
-  }, and dude, we were vibing there and stuff felt like it was moving. And then all of a sudden the gateway crashed again. And I had to revert back to ChatGPT to debug the issue. And it's the same thing we've been facing all day. As soon as we change the openclaw.json file to add these message intents or whatever the heck it's called. Yeah, the intents. It just crashes. What's going on? I thought we decided to upgrade first and everything was working fine for a second there. Where are we in the process and what's going on and how do we avoid this in the future? 
   "commands": {
     "native": "auto",
-    "nativeSkills": "auto"
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
   },
   "channels": {
-   "discord": {
-  "enabled": true,
-  "token": "[REDACTED]",
-  "groupPolicy": "open",
-  "dmPolicy": "pairing",
-  
-},
+    "discord": {
+      "enabled": true,
+      "token": "[REDACTED]",
+      "groupPolicy": "open",
+      "streaming": "off",
+      "dmPolicy": "pairing",
+      "intents": {}
     },
     "imessage": {
       "enabled": true,
       "dmPolicy": "pairing",
       "allowFrom": [
-        "+16138893035",
-        "+15197192224"
+        "+16138893035"
       ],
       "groupPolicy": "allowlist"
     }
@@ -142,37 +103,6 @@
     "auth": {
       "mode": "token",
       "token": "[REDACTED]"
-    },
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
-    },
-    "nodes": {
-      "denyCommands": [
-        "camera.snap",
-        "camera.clip",
-        "screen.record",
-        "calendar.add",
-        "contacts.add",
-        "reminders.add"
-      ]
-    }
-  },
-  "skills": {
-    "load": {
-      "extraDirs": [
-        "/Users/jarvis/Mac-Mini-Obsidian-Vault/1. openclaw/skills/marketing"
-      ]
-    }
-  },
-  "plugins": {
-    "entries": {
-      "imessage": {
-        "enabled": true
-      },
-      "discord": {
-        "enabled": true
-      }
     }
   }
 }
