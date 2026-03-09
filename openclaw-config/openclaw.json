@@ -111,17 +111,19 @@
   },
   "messages": {
     "ackReactionScope": "group-mentions"
-  },
+  }, and dude, we were vibing there and stuff felt like it was moving. And then all of a sudden the gateway crashed again. And I had to revert back to ChatGPT to debug the issue. And it's the same thing we've been facing all day. As soon as we change the openclaw.json file to add these message intents or whatever the heck it's called. Yeah, the intents. It just crashes. What's going on? I thought we decided to upgrade first and everything was working fine for a second there. Where are we in the process and what's going on and how do we avoid this in the future? 
   "commands": {
     "native": "auto",
     "nativeSkills": "auto"
   },
   "channels": {
-    "discord": {
-      "enabled": true,
-      "token": "[REDACTED]",
-      "groupPolicy": "open",
-      "dmPolicy": "pairing"
+   "discord": {
+  "enabled": true,
+  "token": "[REDACTED]",
+  "groupPolicy": "open",
+  "dmPolicy": "pairing",
+  
+},
     },
     "imessage": {
       "enabled": true,
