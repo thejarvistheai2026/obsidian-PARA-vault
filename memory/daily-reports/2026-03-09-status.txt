@@ -1,0 +1,27 @@
+Daily System Status - Monday, Mar 09
+
+Discord Bot: ❌ Stopped
+Last Capture: ⚠️ 2026-03-08
+
+QMD Search:
+   ✅ Updated today
+   Files: N/A | Vectors: N/A
+   (Updated: N/A)
+
+Newsletter: ⏸️ Idle
+   (Not scheduled)
+
+Discord Retro: ⏸️ Idle
+   (Not scheduled)
+
+Daily Backup: ✅ Enabled
+
+OpenClaw Gateway: ✅ Running
+
+Next Jobs:
+- QMD Maintenance: Daily @ 07:00
+- This Report: Daily @ 07:00
+- Newsletter: Sun/Thu @ 09:00
+- Discord Retro: Sun/Thu @ 22:00
+
+Reply STOP to pause reports.
