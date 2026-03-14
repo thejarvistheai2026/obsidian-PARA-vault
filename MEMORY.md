@@ -28,6 +28,16 @@ Mac-Mini-Obsidian-Vault/
 
 **Backup:** Daily at 23:00 via LaunchAgent → `1. openclaw/.scripts/daily-backup.sh`
 
+## System Improvements Tracking
+
+**Location:** `2. the-brain/2. areas/System Improvements & Infrastructure/`
+
+**Files:**
+- `System Improvements Backlog.md` — Master tracking for daily work + long-term goals
+- `Gigabrain Memory Evaluation.md` — Evaluated 2026-03-14, added to backlog
+
+**Purpose:** Track active improvements, future projects, and daily work in one place. Review during weekly pattern reviews.
+
 ## Newsletter System
 
 **Location:** `3. code/newsletter-system/`

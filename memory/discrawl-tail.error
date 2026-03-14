@@ -1,0 +1,6 @@
+/Users/ava/Mac-Mini-Obsidian-Vault/1. openclaw/.scripts/discrawl-run.sh: line 20: exec: discrawl: not found
+open /Users/ava/.discrawl/config.toml: no such file or directory
+2026/03/14 12:04:55 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 16m9.90994s, triggering a reconnection
+2026/03/14 12:22:07 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m10.655721s, triggering a reconnection
+2026/03/14 12:39:20 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m6.525391s, triggering a reconnection
+2026/03/14 12:50:37 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 11m8.991026s, triggering a reconnection

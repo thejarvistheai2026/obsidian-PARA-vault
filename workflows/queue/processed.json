@@ -1,0 +1,114 @@
+{
+  "links": [
+    {
+      "url": "https://www.ben-evans.com/benedictevans/2020/5/4/covid-and-cascading-collapses",
+      "added": "2026-03-14T14:50:25Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "COVID and Cascading Collapses - Benedict Evans.md"
+    },
+    {
+      "url": "https://x.com/MarkKnd/article/2029529584174252226",
+      "added": "2026-03-14T14:52:41Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "How to Win in an Era Where Tech is Cheap and Distribution is Everything.md"
+    },
+    {
+      "url": "https://x.com/zachlloydtweets/status/2029223875066687683",
+      "added": "2026-03-14T14:53:32Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "The Rise of the Agent Builder - Zach Lloyd.md"
+    },
+    {
+      "url": "https://x.com/JulienBek/article/2029680516568600933",
+      "added": "2026-03-14T14:54:43Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "Services - The New Software - Julien Bek.md"
+    },
+    {
+      "url": "https://x.com/bankless/status/2029180056627822818",
+      "added": "2026-03-14T14:55:13Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "Building a Million Dollar Zero Human Company with OpenClaw - Bankless Podcast.md"
+    },
+    {
+      "url": "https://x.com/coreyganim/status/2029215703178334469",
+      "added": "2026-03-14T14:55:53Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "The Simple AI Agent You Can Build in 2 Hours and Sell for 2K Plus - Corey Ganim.md"
+    },
+    {
+      "url": "https://x.com/dimitarangg/article/2029348948784128061",
+      "added": "2026-03-14T14:56:16Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "How To Turn Claude Code into a 10 Plus Man Team - Dimitar Angelov.md"
+    },
+    {
+      "url": "https://x.com/aniketapanjwani/article/2029304239345017050",
+      "added": "2026-03-14T14:58:25Z",
+      "completed": "2026-03-14T17:15:00Z",
+      "status": "success",
+      "output": "Nine Ways to Scrape Data with Claude Code - Aniket Panjwani.md"
+    },
+    {
+      "url": "https://x.com/coreyganim/article/2028470330247803361",
+      "added": "2026-03-14T14:59:25Z",
+      "completed": "2026-03-14T17:15:00Z",
+      "status": "success",
+      "output": "Claude Cowork Masterclass for Beginners - Corey Ganim.md"
+    },
+    {
+      "url": "https://www.lisnewsletter.com/p/multi-hit-wonders",
+      "added": "2026-03-14T15:01:49Z",
+      "completed": "2026-03-14T15:04:13Z",
+      "status": "success",
+      "output": "Multi-Hit Wonders - Embracing Apps With Short Shelf Life.md"
+    },
+    {
+      "url": "https://docs.google.com/document/d/103cGe8qixC7ZzFsRu5Ww2VEW5YgH9zQaiaqbBsZ1lcc/edit?tab=t.0",
+      "added": "2026-03-14T15:02:13Z",
+      "completed": "2026-03-14T17:15:00Z",
+      "status": "success",
+      "output": "The End of Software - Jared Hecht.md"
+    },
+    {
+      "url": "https://x.com/nyk_builderz/article/2030904887186514336",
+      "added": "2026-03-14T17:18:00Z",
+      "completed": "2026-03-14T17:20:00Z",
+      "status": "success",
+      "output": "Claude Plus Obsidian The Memory Stack That Compounds - Nyk.md"
+    },
+    {
+      "url": "https://blog.samaltman.com/what-i-wish-someone-had-told-me",
+      "added": "2026-03-14T17:23:00Z",
+      "completed": "2026-03-14T17:25:00Z",
+      "status": "success",
+      "output": "What I Wish Someone Had Told Me - Sam Altman.md"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qwCH8nyRBCw",
+      "added": "2026-03-14T17:28:54Z",
+      "note": "YouTube video from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T17:31:16Z",
+      "status": "success"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qb90PPbAWz4",
+      "added": "2026-03-14T17:28:54Z",
+      "note": "YouTube video from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T17:31:16Z",
+      "status": "success"
+    }
+  ],
+  "lastUpdated": "2026-03-14T17:25:00Z"
+}
