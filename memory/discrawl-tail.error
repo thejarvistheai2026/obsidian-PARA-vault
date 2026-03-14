@@ -4,3 +4,11 @@ open /Users/ava/.discrawl/config.toml: no such file or directory
 2026/03/14 12:22:07 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m10.655721s, triggering a reconnection
 2026/03/14 12:39:20 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m6.525391s, triggering a reconnection
 2026/03/14 12:50:37 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 11m8.991026s, triggering a reconnection
+2026/03/14 14:57:45 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 15m51.657517s, triggering a reconnection
+2026/03/14 15:15:34 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m42.627209s, triggering a reconnection
+2026/03/14 15:33:03 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 16m11.263907s, triggering a reconnection
+2026/03/14 15:49:23 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 16m12.590633s, triggering a reconnection
+2026/03/14 16:05:42 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 16m11.538608s, triggering a reconnection
+2026/03/14 16:20:26 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 14m36.595265s, triggering a reconnection
+2026/03/14 16:38:23 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 17m49.546407s, triggering a reconnection
+2026/03/14 16:53:45 [DG0] wsapi.go:304:heartbeat() haven't gotten a heartbeat ACK in 15m14.340301s, triggering a reconnection

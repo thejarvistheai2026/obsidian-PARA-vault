@@ -108,6 +108,141 @@
       "priority": "normal",
       "completed": "2026-03-14T17:31:16Z",
       "status": "success"
+    },
+    {
+      "url": "https://www.compoundingquality.net/p/wide-moat-investing-morningstar-framework",
+      "added": "2026-03-14T22:53:51Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://www.tidemarkcap.com/post/the-paths-to-multi-product",
+      "added": "2026-03-14T22:54:50Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://lethain.com/layers-of-context/",
+      "added": "2026-03-14T22:55:19Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://patticus.com/2023/12/16/competitive-research-playbook/",
+      "added": "2026-03-14T22:56:24Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://lethain.com/writers-who-operate/",
+      "added": "2026-03-14T22:56:44Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://medium.com/craft-ventures/the-cadence-how-to-operate-a-saas-startup-436aa8099e8",
+      "added": "2026-03-14T22:57:20Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://www.news.aakashg.com/p/how-figma-grows",
+      "added": "2026-03-14T22:57:42Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://itamargilad.com/outcome-roadmaps/",
+      "added": "2026-03-14T22:59:35Z",
+      "note": "Article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:26Z",
+      "status": "success"
+    },
+    {
+      "url": "https://x.com/thec00z/status/1707643289976082441",
+      "added": "2026-03-14T22:55:36Z",
+      "note": "X thread from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:30Z",
+      "status": "success"
+    },
+    {
+      "url": "https://x.com/carlvellotti/status/1754956757955158091",
+      "added": "2026-03-14T22:58:12Z",
+      "note": "X thread from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:30Z",
+      "status": "success"
+    },
+    {
+      "url": "https://x.com/Atenov_D/article/2032528386745315553",
+      "added": "2026-03-14T22:59:46Z",
+      "note": "X article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:30Z",
+      "status": "success"
+    },
+    {
+      "url": "https://x.com/TheMattBerman/article/2032579413204746666",
+      "added": "2026-03-14T23:00:31Z",
+      "note": "X article from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:31Z",
+      "status": "success"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7PDn091o6_E",
+      "added": "2026-03-14T22:53:20Z",
+      "note": "YouTube video from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:31Z",
+      "status": "success"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=z-fxZPocDTE",
+      "added": "2026-03-14T22:58:40Z",
+      "note": "YouTube video from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:31Z",
+      "status": "success"
+    },
+    {
+      "url": "https://overcast.fm/+ABLZi-8tkKU",
+      "added": "2026-03-14T23:20:22Z",
+      "note": "Podcast from Discord",
+      "source": "manual",
+      "priority": "normal",
+      "completed": "2026-03-14T23:22:31Z",
+      "status": "success"
     }
   ],
   "lastUpdated": "2026-03-14T17:25:00Z"
