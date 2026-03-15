@@ -12,7 +12,9 @@ Before doing anything else:
 
 The Project Context files (AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, BOOTSTRAP.md) are already loaded automatically. Do NOT re-read them.
 
-**CRITICAL — Read CONFIG-CHANGE-PROTOCOL.md** and follow it strictly. This prevents breaking the system with unauthorized config changes.
+**CRITICAL — Read these protocol files:**
+- **CONFIG-CHANGE-PROTOCOL.md** — Never change configs without explicit approval
+- **WORKFLOW-PROTOCOLS.md** — Trust but verify; always recap + next step
 
 For recent memory (today/yesterday daily notes), use `memory_search` when context is needed instead of reading raw files. This avoids context overflow.
 
