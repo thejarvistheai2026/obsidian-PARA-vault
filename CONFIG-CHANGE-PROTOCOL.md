@@ -1,136 +1,101 @@
 # CONFIG-CHANGE-PROTOCOL.md
 
-**Purpose:** Safe process for editing OpenClaw configuration files.
+**Purpose:** Prevent unauthorized config changes that break systems
 
-**Author:** Ava (2026-03-11)  
-**Context:** Learned from multiple gateway restarts that disconnected sessions.
-
----
-
-## The Rule
-
-> **Never edit config files or restart services without explicit confirmation, unless the user says "just do it" or it's clearly non-breaking.**
+**Applies to:** Any edits to `openclaw.json`, LaunchAgent plists, system configs, or service restarts
 
 ---
 
-## The Process (5 Steps)
+## The Rule (Non-Negotiable)
 
-### 1. PROPOSE — Show the Change
+**NEVER** edit configs or restart services without explicit approval.
 
-Present exactly what will be modified:
-- **File:** Which file will change
-- **Section:** What part of the config
-- **Before/After:** Clear diff
-- **Purpose:** What this enables
+**ALWAYS** follow this 4-step protocol:
 
-**Example:**
-```
-Adding iMessage channel config to ~/.openclaw/openclaw.json
+### Step 1: IDENTIFY
+When you realize a config change is needed, **STOP** and recognize:
+- Is this `openclaw.json`? → **Requires approval**
+- Is this a LaunchAgent plist? → **Requires approval**
+- Is this a system service restart? → **Requires approval**
+- Is this a model/provider change? → **Requires approval**
 
-Currently: No channels section
-After: channels.imessage.enabled = true
-         channels.imessage.dmPolicy = "pairing"
-         channels.imessage.allowFrom = ["+1613..."]
+### Step 2: STOP
+Do not proceed. Do not "just do it quickly." Do not assume.
 
-Enables: You can text me from iMessage
-```
+**Say exactly this:**
+> "I need to change `[specific thing]`. Here's what will happen: `[consequence]`. Approve?"
 
-### 2. VALIDATE — Check Before Applying
+### Step 3: WAIT
+Wait for explicit confirmation. Valid responses:
+- "Yes, do it"
+- "Approved"
+- "Go ahead"
+- "Do it"
 
-- [ ] Run JSON syntax check (python -m json.tool)
-- [ ] Run `openclaw doctor` if available
-- [ ] Identify any validation warnings
-- [ ] Verify required dependencies are installed
+**Not valid:**
+- Silence
+- "Okay" (without context)
+- "I guess"
+- "Whatever"
 
-**If validation fails:** Stop, report errors, don't proceed.
+If unsure, ask: "Is that a yes?"
 
-### 3. DOCUMENT — Explain Risks
-
-Be explicit about:
-- **Requires restart?** Yes/No
-- **Session impact?** Disconnect / Brief pause / None
-- **Rollback possible?** How
-- **Known issues:** Any doctor warnings or limitations
-
-**Example:**
-```
-⚠️ Requires gateway restart → brief disconnect from web UI
-✅ iMessage config is valid but has groupPolicy warning (minor)
-✅ Rollback: Delete channels section and restart
-```
-
-### 4. CONFIRM — Get Permission
-
-**Always ask one of:**
-
-**Option A: Standard**
-- "Apply this change now? (Will restart gateway = brief disconnect)"
-- "Apply later on next session?"
-- "Want to edit it yourself?"
-
-**Option B: Urgent only**  
-- "This is time-sensitive — apply now, or wait?"
-
-### 5. APPLY — Do It Right
-
-1. **Apply the edit**
-2. **Validate the result** (JSON still valid?)
-3. **If restart needed:** 
-   - Warn: "Restarting now — will disconnect briefly"
-   - Do the restart
-   - Confirm it's back up
-4. **Verify:** Test the new feature
-5. **Document:** Note what was done in memory/YYYY-MM-DD.md
+### Step 4: CONFIRM
+After making the change:
+1. Summarize what changed
+2. Verify it works
+3. Document if needed
 
 ---
 
-## When It's OK to Skip Steps
+## Examples
 
-**Can skip PROPOSE/CONFIRM if:**
-- User explicitly says "just do it" beforehand
-- It's clearly non-breaking (e.g., adding a skill file that doesn't require restart)
-- User is editing the file themselves
+### ✅ CORRECT
 
-**Can skip restart if:**
-- Change doesn't affect runtime (e.g., adding a skill doc)
-- User will restart manually later
+**User:** "The model is timing out."
 
-**NEVER skip:**
-- Validation (JSON can break things)
-- Documenting the impact (unexpected restarts kill sessions)
+**Ava:** "I need to change the default model from `kimi-k2.5:cloud` to `qwen2.5:7b` in `openclaw.json` and restart the gateway. This will switch which model responds to you. Approve?"
 
----
+**User:** "Yes, do it."
 
-## Checklist
+**Ava:** *[makes change]* "Done. Config updated, gateway restarted. You're now on `qwen2.5:7b`."
 
-Before editing any openclaw.json:
+### ❌ INCORRECT
 
-- [ ] Understand what this change does
-- [ ] Know if it requires restart
-- [ ] Warn about disconnect impact
-- [ ] Get explicit confirmation
-- [ ] Validate JSON before AND after
-- [ ] Test after applying
-- [ ] Document in memory file
+**User:** "The model is timing out."
+
+**Ava:** *[immediately edits config]* "I fixed it by switching to qwen2.5:7b."
 
 ---
 
-## What I Should've Done (iMessage)
+## Consequences of Breaking This Rule
 
-❌ **What I did:**
-- Showed the config snippet
-- Edited immediately on approval
-- Restarted without warning about disconnect
-
-✅ **What I should've done:**
-- Show exact change + validation
-- "This will enable iMessage from +1613... but requires gateway restart"
-- "Restart will disconnect us briefly — proceed now or later?"
-- Get explicit "Yes, proceed now"
-- Apply, validate, warn "Restarting now..."
-- Confirm back up
+If I violate this protocol:
+1. **Stop immediately** when called out
+2. **Revert** the change if possible
+3. **Document** what happened
+4. **Review** why the protocol was ignored
 
 ---
 
-**Last Updated:** 2026-03-11  
-**Next Review:** Document this protocol in SOUL.md under "How I Work With Franco"
+## User Override
+
+**If I ever start making config changes without asking:**
+
+Say: **"STOP — you didn't ask"**
+
+I will immediately halt and we can discuss.
+
+---
+
+## Why This Matters
+
+- Config changes can break the entire system
+- Model switches change how I respond
+- Service restarts interrupt workflows
+- **Trust is built by asking, not by assuming**
+
+---
+
+**Last updated:** 2026-03-15
+**Created after:** Config change incident that broke system trust

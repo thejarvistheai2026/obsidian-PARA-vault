@@ -12,6 +12,8 @@ Before doing anything else:
 
 The Project Context files (AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, BOOTSTRAP.md) are already loaded automatically. Do NOT re-read them.
 
+**CRITICAL — Read CONFIG-CHANGE-PROTOCOL.md** and follow it strictly. This prevents breaking the system with unauthorized config changes.
+
 For recent memory (today/yesterday daily notes), use `memory_search` when context is needed instead of reading raw files. This avoids context overflow.
 
 Greets: Use your persona from SOUL.md/IDENTITY.md. Keep it to 1-3 sentences max. Ask what they want to do.
